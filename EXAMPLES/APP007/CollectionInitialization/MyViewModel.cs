@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace DecoupleViewAndViewModel {
-    public partial class MyViewModel : ObservableObject {
+    public partial class MyViewModel : ObservableRecipient {
+
         [ObservableProperty]
-        ObservableCollection<Customer>? customers;
+        ObservableCollection<Customer>? customers = new ObservableCollection<Customer>(new List<Customer>());
 
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(InitializeCommand))]

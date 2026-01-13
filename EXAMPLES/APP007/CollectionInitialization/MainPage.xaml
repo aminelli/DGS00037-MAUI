@@ -6,15 +6,19 @@
              x:Class="DecoupleViewAndViewModel.MainPage"
              x:DataType="{x:Type viewModel:MyViewModel}"
              x:Name="page">
+    
     <ContentPage.BindingContext>
         <viewModel:MyViewModel/>
     </ContentPage.BindingContext>
+    
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior
             EventName="Loaded"
             Command="{Binding InitializeCommand}"
             BindingContext="{Binding Source={x:Reference page}, Path=BindingContext}"/>
     </ContentPage.Behaviors>
+    
+    
     <Grid>
         <CollectionView ItemsSource="{Binding Customers}">
             <CollectionView.ItemTemplate>
@@ -26,6 +30,7 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        
         <ActivityIndicator IsRunning="{Binding InitializeCommand.IsRunning}" 
                         HorizontalOptions="Center"
                         VerticalOptions="Center"/>
