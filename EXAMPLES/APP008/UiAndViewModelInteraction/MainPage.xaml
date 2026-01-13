@@ -17,8 +17,10 @@
     </ContentPage.Behaviors>
 
 <Grid RowDefinitions="50,*">
+    
     <Button Text="Add Customer"
             Command="{Binding AddCustomerCommand}"/>
+    
     <CollectionView x:Name="customersCollectionView"
                     ItemsSource="{Binding Customers}"
                     Grid.Row="1">
@@ -31,6 +33,7 @@
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
+    
     <ActivityIndicator IsRunning="{Binding InitializeCommand.IsRunning}" 
                         HorizontalOptions="Center" 
                         VerticalOptions="Center"

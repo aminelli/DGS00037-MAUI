@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 
 namespace DecoupleViewAndViewModel {
     public partial class MyViewModel : ObservableObject {
+
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(AddCustomerCommand))]
         ObservableCollection<Customer>? customers;
