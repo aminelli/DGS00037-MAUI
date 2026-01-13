@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MauiAsyncCommandDemo.ViewModels"
+             x:Class="MauiAsyncCommandDemo.MainPage"
+             Title="Async Command Demo">
+
+    <ContentPage.BindingContext>
+        <viewmodels:MyViewModel2 />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="25">
+            
+            <Label Text="Demo AsyncCommand senza CommunityToolkit"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,20"/>
+
+            <Label Text="{Binding Message}" 
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   HeightRequest="60"
+                   BackgroundColor="#F0F0F0"
+                   Padding="10"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"/>
+            
+            <!-- Sezione: Command senza parametro -->
+            <Frame BorderColor="#512BD4" CornerRadius="8" Padding="15" Margin="0,10,0,0">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="Command senza parametro"
+                           FontSize="16"
+                           FontAttributes="Bold"/>
+                    
+                    <Button Text="Carica Dati"
+                            Command="{Binding LoadDataCommand}"
+                            BackgroundColor="#512BD4"/>
+                    
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Dati Validi:" 
+                               VerticalOptions="Center"/>
+                        <Switch IsToggled="{Binding IsDataValid}"/>
+                        <Label Text="(Disabilita per testare CanExecute)" 
+                               FontSize="12"
+                               TextColor="Gray"
+                               VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Sezione: Command con parametro -->
+            <Frame BorderColor="#2E7D32" CornerRadius="8" Padding="15">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="Command con parametro"
+                           FontSize="16"
+                           FontAttributes="Bold"/>
+                    
+                    <Entry x:Name="ItemEntry" 
+                           Placeholder="Inserisci un elemento da salvare"/>
+                    
+                    <Button Text="Salva Elemento"
+                            Command="{Binding SaveItemCommand}"
+                            CommandParameter="{Binding Source={x:Reference ItemEntry}, Path=Text}"
+                            BackgroundColor="#2E7D32"/>
+                    
+                    <Label Text="Il pulsante si disabilita se l'entry è vuota" 
+                           FontSize="12"
+                           TextColor="Gray"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Sezione: Command semplice -->
+            <Frame BorderColor="#D84315" CornerRadius="8" Padding="15">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="Command semplice"
+                           FontSize="16"
+                           FontAttributes="Bold"/>
+                    
+                    <Button Text="Refresh"
+                            Command="{Binding RefreshCommand}"
+                            BackgroundColor="#D84315"/>
+                    
+                    <Label Text="Command senza CanExecute personalizzato" 
+                           FontSize="12"
+                           TextColor="Gray"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="Nota: Durante l'esecuzione, i comandi si disabilitano automaticamente"
+                   FontSize="12"
+                   FontAttributes="Italic"
+                   TextColor="Gray"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,0"/>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
