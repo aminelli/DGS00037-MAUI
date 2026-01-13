@@ -24,8 +24,28 @@ namespace DecoupleViewAndViewModel {
             get;
             set;
         }
+
+        private bool _isBusy = false;
+
+        public bool IsBusy
+        {
+            get => _isBusy;
+            set {
+                _isBusy = value;
+                OnPropertyChanged();
+                Loa
+            }
+        }
+
+        public async Task LoadAsync() {
+            { 
+            }
+        }
+
         public MainViewModel() {
             UpdateTextCommand = new Command(UpdateText);
+
+            UpdateTextCommand = new Command(async () => await LoadAsync(),() => !IsBusy);
         }
         public void UpdateText() {
             count++;
