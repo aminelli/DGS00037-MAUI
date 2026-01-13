@@ -1,4 +1,4 @@
-﻿namespace c1_HorizontalAndVerticalLayouts {
+﻿namespace HorizontalAndVerticalLayouts {
     public partial class App : Application {
         public App() {
             InitializeComponent();

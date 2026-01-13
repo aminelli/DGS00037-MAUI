@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace c1_HorizontalAndVerticalLayouts {
+namespace HorizontalAndVerticalLayouts {
     public static class MauiProgram {
         public static MauiApp CreateMauiApp() {
             var builder = MauiApp.CreateBuilder();

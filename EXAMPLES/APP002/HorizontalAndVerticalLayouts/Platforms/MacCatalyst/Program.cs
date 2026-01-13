@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace c1_HorizontalAndVerticalLayouts {
+namespace HorizontalAndVerticalLayouts {
     public class Program {
         // This is the main entry point of the application.
         static void Main(string[] args) {

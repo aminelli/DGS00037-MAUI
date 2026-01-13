@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace c1_HorizontalAndVerticalLayouts {
+namespace HorizontalAndVerticalLayouts {
     [Application]
     public class MainApplication : MauiApplication {
         public MainApplication(IntPtr handle, JniHandleOwnership ownership)
