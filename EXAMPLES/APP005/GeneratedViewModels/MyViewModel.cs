@@ -11,9 +11,11 @@ using System.Windows.Input;
 
 namespace DecoupleViewAndViewModel {
     public partial class MainViewModel : ObservableObject {
+        
         int count;
         [ObservableProperty]
         string textValue = "Click Me!";
+       
         [RelayCommand]
         public void UpdateText() {
             count++;
