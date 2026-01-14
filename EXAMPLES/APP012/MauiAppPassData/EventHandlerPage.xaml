@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppPassData.EventHandlerPage"
+             Title="EventHandlerPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Scenario 4 - Event handler"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label 
+            x:Name="ReceivedData"
+              Text="In attesa.."
+              VerticalOptions="Center" 
+              HorizontalOptions="Center" />
+
+        <Button Text="Apri pagina secondaria" Clicked="OnNavigateWithCallback" />
+
+    </VerticalStackLayout>
+</ContentPage>
