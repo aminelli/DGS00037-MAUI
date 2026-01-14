@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace DecoupleViewAndViewModel {
     public partial class MyViewModel : ObservableObject {
+
         [ObservableProperty]
         ObservableCollection<Customer>? customers;
 
@@ -11,10 +12,13 @@ namespace DecoupleViewAndViewModel {
         [NotifyCanExecuteChangedFor(nameof(InitializeCommand))]
         bool isInitialized;
 
+
         IDummyService DataService;
+
         public MyViewModel(IDummyService dataService) {
             DataService = dataService;
         }
+
         [RelayCommand(CanExecute = nameof(CanInitialize))]
         async Task InitializeAsync() {
             Customers = new ObservableCollection<Customer>(await DataService.GetCustomersAsync());
@@ -37,6 +41,8 @@ namespace DecoupleViewAndViewModel {
     public interface IDummyService {
         Task<IEnumerable<Customer>> GetCustomersAsync();
     }
+
+
     public class DummyService : IDummyService {
         public async Task<IEnumerable<Customer>> GetCustomersAsync() {
             await Task.Delay(5000);
