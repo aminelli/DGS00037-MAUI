@@ -7,18 +7,20 @@ namespace MauiAppPassData
         
         public ObservableCollection<string> Techniques { get; set; }
 
+        private readonly IServiceProvider _serviceProvider;
 
-
-        public MainPage()
+        public MainPage(IServiceProvider serviceProvider = null)
         {
             InitializeComponent();
+            _serviceProvider = serviceProvider;
 
             Techniques = new ObservableCollection<string>
             {
                 "1. Query Parameters (Semplice, ed è unidirezionale)",
                 "2. Weak Ref Messenger (Communit Toolit)",
                 "3. Shared View Model (Best Practices)",
-                "4. Event Handler (Controllo Diretto)"
+                "4. Event Handler (Controllo Diretto)",
+                "5. DI e IoC (Singleton con stato globale condiviso)"
             };
 
             BindingContext = this;
@@ -44,6 +46,12 @@ namespace MauiAppPassData
             else if (selected.Contains("4."))
             {
                 await Navigation.PushAsync(new EventHandlerPage());
+            }
+            else if (selected.Contains("5.") && _serviceProvider != null)
+            {
+                var page = _serviceProvider.GetRequiredService<ServicePage>();
+                await Navigation.PushAsync(page);
+                //await Navigation.PushAsync(new ServicePage());
             }
 
             ((ListView)sender).SelectedItem = null;

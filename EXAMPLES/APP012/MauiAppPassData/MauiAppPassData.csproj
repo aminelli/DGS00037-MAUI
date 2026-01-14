@@ -85,6 +85,12 @@
 	  <MauiXaml Update="QueryParamsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="ServiceDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ServicePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="SharedViewModelNextPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

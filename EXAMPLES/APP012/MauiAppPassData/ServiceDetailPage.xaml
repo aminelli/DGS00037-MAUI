@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppPassData.ServiceDetailPage"
+             Title="ServiceDetailPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Pagina dettaglio!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+
+       
+        <Entry x:Name="DataEntry" Placeholder="Inserire dati" Text="Messaggio" />
+        <Button Text="Aggiorna Dati Service" Clicked="OnUpdateData" Margin="0,10,0,0" />
+
+        <Button Text="Torna a principale" Clicked="OnGoBack" Margin="0,10,0,0" />
+
+    
+    
+    </VerticalStackLayout>
+</ContentPage>
