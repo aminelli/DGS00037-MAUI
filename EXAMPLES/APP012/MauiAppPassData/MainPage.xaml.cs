@@ -29,7 +29,8 @@ namespace MauiAppPassData
 
             var selected = e.SelectedItem.ToString();
 
-            if (selected.Contains("1.")) { 
+            if (selected.Contains("1.")) {
+                await Navigation.PushAsync(new QueryParamsPage());
             }
 
             ((ListView)sender).SelectedItem = null;

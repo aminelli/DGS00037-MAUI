@@ -34,13 +34,9 @@
             
             <Frame BorderColor="Gray" Padding="15" Margin="0,20,0,0">
                 <VerticalStackLayout Spacing="10">
-
                     <Label Text="Confronto Tecniche:" FontAttributes="Bold" />
-                    <Label Text="Query Params: Tecnica semplice ma con molte limitazioni" FontSize="12"/>
-                    
-
-                </VerticalStackLayout>
-                
+                    <Label Text="Query Params: Tecnica semplice ma con molte limitazioni" FontSize="12"/>                    
+                </VerticalStackLayout>                
             </Frame>
 
 
