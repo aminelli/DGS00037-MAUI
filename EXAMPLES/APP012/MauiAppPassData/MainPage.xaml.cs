@@ -1,25 +1,43 @@
-﻿namespace MauiAppPassData
+﻿using System.Collections.ObjectModel;
+
+namespace MauiAppPassData
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        
+        public ObservableCollection<string> Techniques { get; set; }
+
+
 
         public MainPage()
         {
             InitializeComponent();
+
+            Techniques = new ObservableCollection<string>
+            {
+                "1. Query Parameters (Semplice, ed è unidirezionale)",
+                "2. Weak Ref Messenger (Communit Toolit)"
+            };
+
+            BindingContext = this;
+
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
+        private async void OnTechniqueSelected(Object sender, SelectedItemChangedEventArgs e) {
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+            if (e.SelectedItem == null) return;
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            var selected = e.SelectedItem.ToString();
+
+            if (selected.Contains("1.")) { 
+            }
+
+            ((ListView)sender).SelectedItem = null;
+
         }
+
+
+
     }
 
 }
