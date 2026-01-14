@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppPassData.MessagingSecondPage"
+             Title="MessagingSecondPage">
+    <ScrollView>
+        <VerticalStackLayout>
+            
+            <Label 
+                Text="Weak Ref. Messenger - second page"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+
+            <Frame BorderColor="DarkGreen" Padding="15" Margin="0,20,0,0">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Messaggio Ricevuto:" FontAttributes="Bold" />
+                    <Label x:Name="ReceivedLabel" Text="In attesa..." FontSize="12" TextColor="White"/>
+                </VerticalStackLayout>
+            </Frame>
+
+
+            <Label Text="Invia messaggio di risposta:" FontAttributes="Bold" Margin="0,20,0,0"/>
+
+            <Entry x:Name="ResponseEntry" Placeholder="Messaggio" Text="Rispondi" />
+
+            <Button Text="Invia risposta e torna su message center" Clicked="OnSendBack" />
+           
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -31,7 +31,11 @@ namespace MauiAppPassData
 
             if (selected.Contains("1.")) {
                 await Navigation.PushAsync(new QueryParamsPage());
+            } else if (selected.Contains("2."))
+            {
+                await Navigation.PushAsync(new MassagingCenterPage());
             }
+
 
             ((ListView)sender).SelectedItem = null;
 

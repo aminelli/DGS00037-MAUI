@@ -1,12 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using CommunityToolkit.Mvvm.Messaging.Messages;
 
 namespace MauiAppPassData.Business
 {
-    class DataMessage
-    {
+
+    public class DataToMessage : ValueChangedMessage<DataMessage> { 
+        public DataToMessage(DataMessage value) : base(value) { }
     }
+
+
+    public class DataFromMessage : ValueChangedMessage<DataMessage>
+    {
+        public DataFromMessage(DataMessage value) : base(value) { }
+    }
+
+
+    public class DataMessage
+    {
+        public string Message { get; set; }
+        public DateTime Timestamp { get; set; }
+    }
+
 }
