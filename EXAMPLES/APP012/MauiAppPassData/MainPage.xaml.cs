@@ -16,7 +16,8 @@ namespace MauiAppPassData
             Techniques = new ObservableCollection<string>
             {
                 "1. Query Parameters (Semplice, ed è unidirezionale)",
-                "2. Weak Ref Messenger (Communit Toolit)"
+                "2. Weak Ref Messenger (Communit Toolit)",
+                "3. Shared View Model (Best Practices)"
             };
 
             BindingContext = this;
@@ -34,6 +35,10 @@ namespace MauiAppPassData
             } else if (selected.Contains("2."))
             {
                 await Navigation.PushAsync(new MassagingCenterPage());
+            }
+            else if (selected.Contains("3."))
+            {
+                await Navigation.PushAsync(new SharedViewModelPage());
             }
 
 

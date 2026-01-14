@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppPassData.SharedViewModelPage"
+             Title="SharedViewModelPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Tecnica 3 - Shared ViewModel (BEST PRACTICES)"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+
+        <Entry x:Name="DataEntry" Placeholder="Inserire dati" Text="{Binding SharedData}" />
+        <Label Text="{Binding Counter, StringFormat = 'Counter: {0}'}" />
+        <Button Text="Apri pagina secondaria" Clicked="OnNavigateNextPage" />
+
+    </VerticalStackLayout>
+</ContentPage>
